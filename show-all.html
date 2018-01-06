@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"/>
+
+</head>
+<body ng-app="app" ng-controller="MainController as main">
+
+<div class="wrapper">
+    <h1 class="page-header">20 цитат о России. Список</h1>
+    <div class="content-box" ng-repeat="item in main.items">
+        <div class="quote-id">{{item.id + 1}}</div>
+        <div class="quote-symbol">”</div>
+        <div class="quote-text">
+            {{item.quote}}
+        </div>
+        <div class="quote-tire"></div>
+        <div class="quote-question">
+            Кто автор цитаты?
+        </div>
+        <div class="row">
+            <div class="col-xs-3 answer-wrapper" ng-repeat="answer in item.answers">
+                <answer-box></answer-box>
+            </div>
+
+        </div>
+    </div>
+    <pre>{{main.items | json}}</pre>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+<script>
+    var app = angular.module("app", []);
+
+    app.controller("MainController", function ($http) {
+        var main = this;
+
+        main.curItem = undefined;
+        main.items = undefined;
+
+        $http.get("data/quotes.json")
+                .success(function (data) {
+                    main.items = data
+                            //.filter(function (x) { return x.id < 1; })
+                            .map(function (x, i) {
+                                x.id = i;
+                                x.answers[0].correct = true;
+                                x.answers = x.answers.map(function (answer) {
+                                    if (answer.avatar === "") answer.avatar = "img/150x200.png";
+                                    else answer.avatar = "img/" + answer.avatar;
+                                    return answer;
+                                })
+                                //x.answers = _.shuffle(x.answers);
+                                return x;
+                            })
+                    main.curItem = main.items[0];
+                })
+
+    })
+
+    app.directive("answerBox", function () {
+        return {
+            link: function (scope, el, attrs) {
+                el.on('mouseenter', function () {
+                    el.css({"background-color":"#dddddd"})
+                });
+                el.on('mouseleave', function () {
+                    el.css({"background-color":"#ffffff"})
+                })
+            },
+            replace:true,
+            template:'<div class="answer clickable">' +
+                    '<img ng-src="{{answer.avatar}}" alt="" class="img-person"/>' +
+                    '<h3>{{answer.author}}</h3>' +
+                    '</div>'
+
+        }
+    })
+
+</script>
+
+</body>
+</html>
+
+

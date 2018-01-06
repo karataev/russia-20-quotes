@@ -1,0 +1,102 @@
+.nav-holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 9999;
+}
+
+.menu-icon {
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.menu-link {
+    padding: .2em .4em;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    font-size: 30px;
+    transition: 0.2s ease;
+}
+
+.menu-link:hover {
+    color: #ffffff;
+    background: rgba(0, 0, 0, .6);
+}
+
+.nav-menu {
+    position: absolute;
+    width: 320px;
+    height: 100%;
+    top: 0;
+    left: -320px;
+    color: #ffffff;
+    padding: 10px;
+    background: #2C3E50;
+    overflow-y: auto;
+    -webkit-transition: left .35s ease;
+    transition: left .35s ease;
+}
+
+.nav-menu-header {
+    text-align: center;
+    margin-top: 0;
+}
+
+.nav-menu ul {
+    border-top: 2px solid #34495D;
+}
+
+.nav-menu li {
+    border-bottom: 2px solid #34495D;
+    transition: 0.2s ease;
+    display: block;
+    padding: 1em;
+}
+
+.nav-menu li:hover {
+    background: #25B89A;
+}
+
+.nav-menu li>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-menu li>a:hover,
+.nav-menu li>a:active {
+    /*background: #25B89A;*/
+}
+
+.nav-thumb {
+    /*border:2px solid #fff;*/
+    width: 260px;
+    height: 80px;
+    border-radius: 5px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-image: url(icons/ussr-posters.jpg);*/
+    transition: all 0.2s;
+}
+
+.nav-thumb:hover {
+    background-size: 110%;
+}
+
+
+.icon-close {
+    display: block;
+    font-size: 50px;
+    line-height: 30px;
+    text-align: right;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.icon-close:hover {
+    text-decoration: none;
+    color: #ffffff;
+}

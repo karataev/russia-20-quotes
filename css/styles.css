@@ -1,0 +1,137 @@
+
+[ng-cloak] {
+    display:none;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa url('grey.png');
+    min-height: 1000px;
+}
+
+.game-version {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+div {
+    /*border:1px solid red;*/
+}
+
+.panel-default {
+    background-color: #eeeeee;
+    padding: 5px;
+    width: 960px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+}
+
+.content-box {
+    position: relative;
+    margin-top: 10px;
+    padding: 20px 50px 10px;
+    min-height: 600px;
+    background-color: #eeeeee;
+    border:6px solid #3298CC;
+}
+
+.quote-id {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0 10px;
+    background-color: #fff;
+    border-radius:5px;
+    font-size: 40px;
+    color:#666;
+}
+
+.quote-symbol {
+    margin-top: -50px;
+    margin-bottom: -170px;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    font-size: 300px;
+    line-height: 300px;
+    color:#3298CC;
+}
+
+.quote-text {
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.quote-author {
+    text-align: center;
+    margin-top: 50px;
+    color:#999;
+}
+
+.quote-tire {
+    width: 80px;
+    height: 10px;
+    margin: 30px auto;
+    background-color: #000000;
+}
+
+.quote-question {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #666;
+}
+
+.answer-wrapper {
+    text-align: center;
+}
+
+.answer {
+    border:4px solid #ddd;
+    padding: 5px;
+    background-color: #ffffff;
+    transition: all 0.3s;
+    transition-property: border, background-color;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.img-person {
+    width: 150px;
+    height: 200px;
+}
+
+.bt-next {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+}
+
+.game-complete {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.big-font {
+    font-size: 90px;
+}
+
+.putin-approves {
+    height: 400px;
+}
